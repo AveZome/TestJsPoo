@@ -24,15 +24,15 @@ class Worker{
          return (this.getRate()*this.getHours()); 
      }
      afis(){
-        console.log(this.getName());
-        console.log(this.getSurname());
-        console.log(this.getRate());
-        console.log(this.getHours());
-        console.log(this.getsalary());
+        console.log("Name "+this.getName());
+        console.log("Surname "+this.getSurname());
+        console.log("Hour Rate "+this.getRate());
+        console.log("Hour"+this.getHours());
+        console.log("Salary "+this.getsalary());
         this.increaseSalary(2);
-        console.log(this.getsalary());
+        console.log("Salary Increase "+this.getsalary());
         this.setTax(18);
-        console.log(this.getSalaryNetto());
+        console.log("Salary Netto "+this.getSalaryNetto());
         console.log("---------------------------");
      }
      increaseSalary(sal){
@@ -55,7 +55,6 @@ a.push(worker);
 let worker1 = new Worker("Joric","Arde",53,455);
 a.push(worker1);
 //worker1.afis();
-console.log("---------------------------");
 let worker2 = new Worker("Vasile","Munteanu",16,54);
 a.push(worker2);
 //worker2.afis();
