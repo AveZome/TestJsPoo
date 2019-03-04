@@ -30,7 +30,7 @@ class Worker{
         console.log(this.getHours());
         console.log(this.getsalary());
         this.increaseSalary(2);
-        console.log(worker.getsalary());
+        console.log(this.getsalary());
         this.setTax(18);
         console.log(this.getSalaryNetto());
         console.log("---------------------------");
