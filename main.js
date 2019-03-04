@@ -21,23 +21,44 @@ class Worker{
         this.hours=hours;
     }
      getsalary(){
-         return (this.hourRate*this.hours); 
+         return (this.getRate()*this.getHours()); 
      }
      afis(){
-        console.log(this.name);
-        console.log(this.surname);
-        console.log(this.hourRate);
-        console.log(this.hours);
+        console.log(this.getName());
+        console.log(this.getSurname());
+        console.log(this.getRate());
+        console.log(this.getHours());
         console.log(this.getsalary());
+        this.increaseSalary(2);
+        console.log(worker.getsalary());
+        this.setTax(18);
+        console.log(this.getSalaryNetto());
+        console.log("---------------------------");
      }
+     increaseSalary(sal){
+         this.hourRate+=2;
+     }
+     setTax(tax){
+         this.tax=1-tax/100;
+     }
+     getSalaryNetto(){
+         return (this.getsalary()*this.tax);
+     }
+
 }
 
+var a=new Array();
+
 let worker = new Worker("Ion","Creanga",10,176);
-worker.afis();
+a.push(worker);
+//worker.afis();
 let worker1 = new Worker("Joric","Arde",53,455);
-worker1.afis();
+a.push(worker1);
+//worker1.afis();
+console.log("---------------------------");
 let worker2 = new Worker("Vasile","Munteanu",16,54);
-worker2.afis();
+a.push(worker2);
+//worker2.afis();
 
 if(worker.getsalary()>worker1.getsalary()){
     if(worker.getsalary()>worker2.getsalary())console.log("Ion are salariu mai mare");
@@ -46,4 +67,8 @@ if(worker.getsalary()>worker1.getsalary()){
 else{
     if(worker1.getsalary()>worker2.getsalary())console.log("Joric are salariu mai mare");
     else console.log("Vasile are salariu mai mare");
+}
+
+for(i=0;i<a.length;i++){
+    a[i].afis();
 }
